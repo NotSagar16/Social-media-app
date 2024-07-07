@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const plm = require("passport-local-mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/instainsta");
+mongoose.connect("mongodb://localhost:27017/instagram");
 
 const userSchema = mongoose.Schema({
   username: String,
@@ -10,7 +10,7 @@ const userSchema = mongoose.Schema({
   password: String,
   picture: {
     type: String,
-    default: "def.png"
+    default: "def.png",
   },
   contact: String,
   bio: String,
@@ -18,12 +18,6 @@ const userSchema = mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "story" 
-    }
-  ],
-  saved: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "post" 
     }
   ],
   posts: [{

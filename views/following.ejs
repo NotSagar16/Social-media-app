@@ -1,0 +1,16 @@
+<% include ./partials/header.ejs %>
+
+<div class="w-full min-h-screen bg-zinc-900 text-white py-5 px-5">
+    <h3 class="text-3xl">Followings</h3>
+    <% if(user.following.length>0){ %>
+        <% user.following.forEach(function(f){ %>
+            <h4 class="text-2xl mt-3 border-solid border border-white border-2 rounded-lg px-2 py-1"><%= f.username %></h4>
+        <% }) %>
+      <% } else { %>
+        <h4>You don't follow anyone</h4>
+        <% } %>
+    <h4 class="w-full min-h-screen bg-zinc-900 text-white py-5 px-5"></h4>
+</div>
+
+
+<% include ./partials/footer.ejs %>
